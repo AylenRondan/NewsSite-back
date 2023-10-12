@@ -1,4 +1,4 @@
-const userService = require('./userService');
+const userService = require('../services/userService');
 
 //Controlador para obtener la edad de un usuario por medio de su ID.
 const getUserEdad = (req, res) => {
@@ -11,5 +11,5 @@ const getUserEdad = (req, res) => {
       res.status(404).json({ error: 'Usuario no encontrado' });
     }
   };
-  
+   
   module.exports = { getUserEdad };
