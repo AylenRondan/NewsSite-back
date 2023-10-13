@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const userRoutes = require('../back/src/routes/userRoutes');
+const userRoutes = require('./routes/userRoutes');
 const port = 3000;
 
 app.use('/', userRoutes);
