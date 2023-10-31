@@ -1,23 +1,9 @@
 
-const User = require('../models/user');
-const journalistService = require ('../services/index.js')
-
-
-// Ruta para crear un periodista
-router.post('/journalist', async (req, res) => {
+const journalistService = require ('../services')
+async function journalist(req, res) {
   try {
     const { name, lastname, adress, phoneNumber, email } = req.body;
-    const create = journalistService.createJournalist();
-
-    const nuevoUsuario = new Usuario({
-      name,
-      lastname,
-      adress,
-      phoneNumber,
-      email,
-      ...create, //Agrega el valor por defecto a los datos del usuario.
-    });
-
+    await journalistService.createJournalist({ name, lastname, adress, phoneNumber, email });
 
     res.status(201).json({
       code: 201,
@@ -33,4 +19,6 @@ router.post('/journalist', async (req, res) => {
       error: error.message,
     });
   }
-});
+};
+
+module.exports = {journalist}

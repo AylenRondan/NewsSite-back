@@ -1,5 +1,6 @@
-module.exports = {
-    createJournalist: () => {
-        return {isAdmin: false};
-    }
-};
+const journalistService = require('./journalist.service');
+
+
+
+
+module.exports( {journalistService})
